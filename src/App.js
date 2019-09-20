@@ -1,0 +1,222 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import headshot from "./personal.png";
+
+import projects from "./projects";
+
+const S = {};
+
+S.Content = styled.div`
+  margin: 64px 32px;
+`;
+
+S.Name = styled.h1`
+  margin-top: 64px;
+
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 48px;
+
+  color: #3b476f;
+`;
+
+S.Headline = styled.h2`
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+
+  width: 400px;
+
+  color: #989898;
+`;
+
+S.Headshot = styled.img`
+  position: fixed;
+  height: 125vh;
+  right: 0;
+  bottom: 0;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+S.Cards = styled.div`
+  width: 700px;
+  margin-top: 64px;
+
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+S.ProjectCard = styled.div`
+  position: relative;
+  width: 170px;
+  height: 170px;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 32px;
+  margin-bottom: 32px;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.11), 0px 2px 7px rgba(0, 0, 0, 0.09);
+  border-radius: 8px;
+
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.1);
+    & > img {
+      height: 100%;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+`;
+
+S.ProjectImage = styled.img`
+  position: absolute;
+  height: 140%;
+  width: 140%;
+  opacity: 0;
+
+  transition: all 0.2s;
+`;
+
+S.ProjectTitle = styled.div`
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 20px;
+  color: #3b476f;
+  text-align: center;
+`;
+S.ProjectSubtitle = styled.div`
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 16px;
+  padding-top: 4px;
+  text-align: center;
+  color: #3b476f;
+`;
+
+S.Modal = styled.div`
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+  z-index: 20;
+`;
+
+S.ModalDimmer = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(20, 20, 20, 0.6);
+`;
+
+S.ModalContent = styled.div`
+  background: white;
+  position: absolute;
+
+  padding: 12px 24px;
+  box-sizing: border-box;
+
+  top: 30%;
+  height: 40%;
+  width: 50%;
+  left: 25%;
+
+  border-radius: 8px;
+`;
+
+S.ModalTitle = styled.h3`
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 24px;
+
+  margin-bottom: 8px;
+
+  color: #3b476f;
+`;
+S.ModalSubtitle = styled.h4`
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 16px;
+
+  margin-top: 8px;
+
+  color: #3b476f;
+`;
+S.ModalProjectPoints = styled.ul`
+  padding-left: 16px;
+  font-family: Lato;
+  font-weight: 300;
+  color: #3b476f;
+`;
+
+S.ModalProjectPoint = styled.li`
+  margin-bottom: 8px;
+`;
+
+S.ModalProjectLink = styled.a`
+  font-family: Lato;
+  color: #3b476f;
+  margin-right: 8px;
+`;
+
+export default () => {
+  const [selectedProject, setSelectedProject] = useState(undefined);
+  return (
+    <>
+      {selectedProject && (
+        <S.Modal>
+          <S.ModalDimmer onClick={() => setSelectedProject(undefined)} />
+          <S.ModalContent>
+            <S.ModalTitle>{selectedProject.title}</S.ModalTitle>
+            <S.ModalSubtitle>{selectedProject.subtitle}</S.ModalSubtitle>
+            <S.ModalProjectPoints>
+              {selectedProject.description.map(point => (
+                <S.ModalProjectPoint>{point}</S.ModalProjectPoint>
+              ))}
+            </S.ModalProjectPoints>
+
+            {selectedProject.links.map(link => (
+              <S.ModalProjectLink href={link.link} target="_blank">
+                {link.name}
+              </S.ModalProjectLink>
+            ))}
+          </S.ModalContent>
+        </S.Modal>
+      )}
+      <S.Content>
+        <S.Name>Jay Mohile</S.Name>
+        <S.Headline>
+          I’m a student engineer with a passion for solving real world problems
+          with technology and design.
+        </S.Headline>
+        <S.Headshot src={headshot} />
+
+        <S.Cards>
+          {projects.map(project => (
+            <S.ProjectCard onClick={() => setSelectedProject(project)}>
+              <S.ProjectImage src={project.image} />
+              <S.ProjectTitle>{project.title}</S.ProjectTitle>
+              <S.ProjectSubtitle>{project.subtitle}</S.ProjectSubtitle>
+            </S.ProjectCard>
+          ))}
+        </S.Cards>
+      </S.Content>
+    </>
+  );
+};
