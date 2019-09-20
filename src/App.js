@@ -302,7 +302,7 @@ export default () => {
             target="_blank"
           ></S.SocialLink>
           <S.SocialLink
-            href="https://medium.com/@jamohile"
+            href="https://github.com/jamohile/personal-site/files/3635741/Jay.Mohile.pdf"
             target="_blank"
             style={{ fontFamily: "Montserrat", fontSize: "16px" }}
           >
