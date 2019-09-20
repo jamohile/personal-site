@@ -100,16 +100,16 @@ export default [
       { name: "Github", link: "https://github.com/oxeolo/chai" }
     ]
   },
-  {
-    title: "Lake",
-    subtitle: "Synchronized stateful variables",
-    image:
-      "https://user-images.githubusercontent.com/17712692/65296055-493b1500-db31-11e9-856c-390cfaccdb8e.png",
-    description: [
-      "Provides simple variable synchronization across web clients.",
-      "Enables lightweight data storage and sync without a database."
-    ]
-  },
+//   {
+//     title: "Lake",
+//     subtitle: "Synchronized stateful variables",
+//     image:
+//       "https://user-images.githubusercontent.com/17712692/65296055-493b1500-db31-11e9-856c-390cfaccdb8e.png",
+//     description: [
+//       "Provides simple variable synchronization across web clients.",
+//       "Enables lightweight data storage and sync without a database."
+//     ]
+//   },
   {
     title: "Dummy",
     subtitle: "Client-side data and API manager",

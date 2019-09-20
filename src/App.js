@@ -10,6 +10,20 @@ S.Content = styled.div`
   margin: 64px 32px;
 `;
 
+S.Profile = styled.img`
+  display: block;
+  object-fit: contain;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 1000px) {
+    display: none;
+  }
+`;
+
 S.Name = styled.h1`
   margin-top: 64px;
 
@@ -18,15 +32,25 @@ S.Name = styled.h1`
   font-size: 48px;
 
   color: #3b476f;
+
+  @media (max-width: 1000px) {
+    margin-top: 32px;
+    text-align: center;
+  }
 `;
 
 S.Headline = styled.h2`
   font-family: Lato;
   font-weight: 300;
   font-size: 24px;
+
   line-height: 32px;
 
   width: 400px;
+  @media (max-width: 1000px) {
+    width: 100%;
+    text-align: center;
+  }
 
   color: #989898;
 `;
@@ -48,12 +72,18 @@ S.Cards = styled.div`
 
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    justify-content: space-around;
+  }
 `;
 
 S.ProjectCard = styled.div`
   position: relative;
   width: 170px;
   height: 170px;
+
   overflow: hidden;
 
   box-sizing: border-box;
@@ -63,8 +93,14 @@ S.ProjectCard = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin-right: 32px;
-  margin-bottom: 32px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin-right: 0;
+    padding: 8px;
+  }
 
   background: #ffffff;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.11), 0px 2px 7px rgba(0, 0, 0, 0.09);
@@ -73,10 +109,13 @@ S.ProjectCard = styled.div`
   transition: all 0.2s;
   &:hover {
     transform: scale(1.1);
-    & > img {
-      height: 100%;
-      width: 100%;
-      opacity: 1;
+
+    @media (min-width: 1000px) {
+      & > img {
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+      }
     }
   }
 `;
@@ -96,6 +135,10 @@ S.ProjectTitle = styled.div`
   font-size: 20px;
   color: #3b476f;
   text-align: center;
+
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
 `;
 S.ProjectSubtitle = styled.div`
   font-family: Lato;
@@ -104,6 +147,10 @@ S.ProjectSubtitle = styled.div`
   padding-top: 4px;
   text-align: center;
   color: #3b476f;
+
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
 `;
 
 S.Modal = styled.div`
@@ -138,6 +185,15 @@ S.ModalContent = styled.div`
   left: 25%;
 
   border-radius: 8px;
+
+  @media (max-width: 1000px) {
+    height: fit-content;
+    top: 20%;
+    width: 90%;
+    left: 5%;
+    padding: 24px 24px;
+    padding-top: 0px;
+  }
 `;
 
 S.ModalTitle = styled.h3`
@@ -200,6 +256,7 @@ export default () => {
         </S.Modal>
       )}
       <S.Content>
+        <S.Profile src={headshot} />
         <S.Name>Jay Mohile</S.Name>
         <S.Headline>
           I’m a student engineer with a passion for solving real world problems
