@@ -109,6 +109,7 @@ S.ProjectCard = styled.div`
   transition: all 0.2s;
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
 
     @media (min-width: 1000px) {
       & > img {
@@ -231,6 +232,24 @@ S.ModalProjectLink = styled.a`
   margin-right: 8px;
 `;
 
+S.SocialLinks = styled.div`
+  display: flex;
+  align-items: center;
+  @media (max-width: 1000px) {
+    justify-content: center;
+  }
+`;
+S.SocialLink = styled.a`
+  text-decoration: none;
+  font-size: 24px;
+  color: #3b476f;
+  margin-right: 16px;
+
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
 export default () => {
   const [selectedProject, setSelectedProject] = useState(undefined);
   return (
@@ -264,6 +283,28 @@ export default () => {
         </S.Headline>
         <S.Headshot src={headshot} />
 
+        <S.SocialLinks>
+          <S.SocialLink
+            className="fab fa-linkedin"
+            href="https://linkedin.com/in/jamohile"
+            target="_blank"
+          ></S.SocialLink>
+          <S.SocialLink
+            className="fab fa-github"
+            href="https://github.com/jamohile"
+            target="_blank"
+          ></S.SocialLink>
+          <S.SocialLink
+            className="fab fa-medium"
+            href="https://medium.com/@jamohile"
+            target="_blank"
+          ></S.SocialLink>
+          <S.SocialLink
+            href="https://medium.com/@jamohile"
+            target="_blank"
+            style={{fontFamily: "Montserrat", fontSize: "16px"}}
+          >Resume</S.SocialLink>
+        </S.SocialLinks>
         <S.Cards>
           {projects.map(project => (
             <S.ProjectCard onClick={() => setSelectedProject(project)}>
