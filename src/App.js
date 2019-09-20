@@ -279,6 +279,9 @@ export default () => {
         <S.Headline>
           I’m a student engineer with a passion for solving real world problems
           with technology and design.
+          <br />
+          <br />
+          Studying Engineering Science @ UofT
         </S.Headline>
         <S.Headshot src="https://user-images.githubusercontent.com/17712692/65325224-4580b000-db7c-11e9-9e2f-37fc7e391d84.png" />
 
