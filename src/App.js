@@ -274,7 +274,7 @@ export default () => {
         </S.Modal>
       )}
       <S.Content>
-        <S.Profile src={headshot} />
+        <S.Profile src="https://user-images.githubusercontent.com/17712692/65325224-4580b000-db7c-11e9-9e2f-37fc7e391d84.png" />
         <S.Name>Jay Mohile</S.Name>
         <S.Headline>
           I’m a student engineer with a passion for solving real world problems
