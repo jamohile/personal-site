@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import headshot from "./personal.png";
 
 import projects from "./projects";
 
@@ -281,7 +280,7 @@ export default () => {
           I’m a student engineer with a passion for solving real world problems
           with technology and design.
         </S.Headline>
-        <S.Headshot src={headshot} />
+        <S.Headshot src="https://user-images.githubusercontent.com/17712692/65325224-4580b000-db7c-11e9-9e2f-37fc7e391d84.png" />
 
         <S.SocialLinks>
           <S.SocialLink
@@ -302,8 +301,10 @@ export default () => {
           <S.SocialLink
             href="https://medium.com/@jamohile"
             target="_blank"
-            style={{fontFamily: "Montserrat", fontSize: "16px"}}
-          >Resume</S.SocialLink>
+            style={{ fontFamily: "Montserrat", fontSize: "16px" }}
+          >
+            Resume
+          </S.SocialLink>
         </S.SocialLinks>
         <S.Cards>
           {projects.map(project => (
