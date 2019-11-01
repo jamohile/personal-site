@@ -46,7 +46,7 @@ export default [
   },
   {
     title: "Parlex",
-    subtitle: "0 Dependency language-agnostic AST generator.",
+    subtitle: "Language-agnostic AST generator with no dependencies",
     image:
       "https://user-images.githubusercontent.com/17712692/67999872-540abe80-fc34-11e9-9d0b-8f3b1867dba6.png",
     description: [
