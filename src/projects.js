@@ -45,6 +45,21 @@ export default [
     ]
   },
   {
+    title: "Parlex",
+    subtitle: "0 Dependency language-agnostic AST generator.",
+    image:
+      "https://user-images.githubusercontent.com/17712692/67999872-540abe80-fc34-11e9-9d0b-8f3b1867dba6.png",
+    description: [
+      'Stands for "Parser-Lexer"',
+      "Developed using C++",
+      "Parses (general c-like) source code to generate an abstract syntax tree",
+      "Future plans to develop fuller pipeline around AST generation, transpilation, compilation."
+    ],
+    links: [
+      { name: "Github", link: "https://github.com/jamohile/parlex" }
+    ]
+  },
+  {
     title: "Grouptimize",
     subtitle: "Group sentiment extrapolation and clustering",
     image:
